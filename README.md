@@ -6,7 +6,7 @@ Simple 3D player versus player checkers game made with Unity
 
 ## Authors
 
-* ** Aleksanteri Koivisto
+Aleksanteri Koivisto
 
 ## Built with
 
