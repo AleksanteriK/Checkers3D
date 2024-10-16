@@ -1,6 +1,6 @@
 # Checkers3D
 
-## Version 0.1
+## Version 1.0
 
 Simple 3D player versus player checkers game made with Unity
 
