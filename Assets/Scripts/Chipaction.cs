@@ -20,7 +20,7 @@ public class Chipaction : MonoBehaviour
     public bool can_move = true;
     public bool can_jump;
     public bool has_jumped = false;
-    public Gamehandler gamehandler;
+    public Gamehandler gameHandler;
     private bool is_king = false;
     float current_x;
     float current_z;
@@ -33,8 +33,8 @@ public class Chipaction : MonoBehaviour
     public void SelectChip()
     {
         is_selected = true;
-        gamehandler.ResetSectors();
-        possible_action = gamehandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
+        gameHandler.ResetSectors();
+        possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
 
         if (possible_action == CanDo.None)
         {
@@ -56,7 +56,7 @@ public class Chipaction : MonoBehaviour
     public void DeselectChip()
     {
         is_selected = false;
-        gamehandler.ResetSectors();
+        gameHandler.ResetSectors();
         
         /*check if there is a jump going on, then if is then by deselecting the chip, player
           can decide to not perform a double or triple or quadriple jump*/
@@ -65,9 +65,9 @@ public class Chipaction : MonoBehaviour
             can_jump = false;
             has_jumped = false;
             UpdateCurrentPositions();
-            gamehandler.CheckIsKing();
-            gamehandler.UpdateGameScore();
-            gamehandler.EndTurn();
+            gameHandler.CheckIsKing();
+            gameHandler.UpdateGameScore();
+            gameHandler.EndTurn();
         }
     }
 
@@ -112,22 +112,22 @@ public class Chipaction : MonoBehaviour
 
     void Update()
     {
-        if (is_selected && gamehandler.GetAvailableSectors().Count > 0 && (possible_action == CanDo.Both || possible_action == CanDo.Move || possible_action == CanDo.Jump))
+        if (is_selected && gameHandler.GetAvailableSectors().Count > 0 && (possible_action == CanDo.Both || possible_action == CanDo.Move || possible_action == CanDo.Jump))
         {
             bool sector_found = false;
 
-            for (int i = 0; i < gamehandler.GetAvailableSectors().Count; i++)
+            for (int i = 0; i < gameHandler.GetAvailableSectors().Count; i++)
             {
-                for (int j = 0; j < gamehandler.GetSectors().Count; j++)
+                for (int j = 0; j < gameHandler.GetSectors().Count; j++)
                 {
-                    Sector sector = gamehandler.GetSectors()[j].GetComponent<Sector>();
+                    Sector sector = gameHandler.GetSectors()[j].GetComponent<Sector>();
 
                     if (sector.isclicked &&
-                       Mathf.Abs(sector.transform.position.x - gamehandler.GetAvailableSectors()[i].transform.position.x) < gamehandler.tolerance &&
-                       Mathf.Abs(sector.transform.position.z - gamehandler.GetAvailableSectors()[i].transform.position.z) < gamehandler.tolerance)
+                       Mathf.Abs(sector.transform.position.x - gameHandler.GetAvailableSectors()[i].transform.position.x) < gameHandler.tolerance &&
+                       Mathf.Abs(sector.transform.position.z - gameHandler.GetAvailableSectors()[i].transform.position.z) < gameHandler.tolerance)
                     {
                         //move the chip to the selected sector
-                        Vector3 target_position = new Vector3(gamehandler.GetAvailableSectors()[i].transform.position.x, current_y, gamehandler.GetAvailableSectors()[i].transform.position.z);
+                        Vector3 target_position = new Vector3(gameHandler.GetAvailableSectors()[i].transform.position.x, current_y, gameHandler.GetAvailableSectors()[i].transform.position.z);
                         
                         if (transform.position != target_position)
                         {
@@ -135,13 +135,13 @@ public class Chipaction : MonoBehaviour
                             sector_found = true;
                             has_jumped = false;
                             UpdateCurrentPositions();
-                            gamehandler.ResetSectors();
+                            gameHandler.ResetSectors();
                         }
                         
-                        for (int k = 0; k < gamehandler.GetJumpableSectors().Count; k++)
+                        for (int k = 0; k < gameHandler.GetJumpableSectors().Count; k++)
                         {
-                            if (Mathf.Abs(gamehandler.GetJumpableSectors()[k].transform.position.x - sector.transform.position.x) < gamehandler.tolerance &&
-                                Mathf.Abs(gamehandler.GetJumpableSectors()[k].transform.position.z - sector.transform.position.z) < gamehandler.tolerance)
+                            if (Mathf.Abs(gameHandler.GetJumpableSectors()[k].transform.position.x - sector.transform.position.x) < gameHandler.tolerance &&
+                                Mathf.Abs(gameHandler.GetJumpableSectors()[k].transform.position.z - sector.transform.position.z) < gameHandler.tolerance)
                             {
                                 has_jumped = true;
                             }
@@ -149,11 +149,11 @@ public class Chipaction : MonoBehaviour
 
                         if (has_jumped == true)
                         {
-                            gamehandler.RemoveEatedOpponents(current_x, current_z);
-                            gamehandler.ResetSectors();
+                            gameHandler.RemoveEatedOpponents(current_x, current_z);
+                            gameHandler.ResetSectors();
 
                             //check for additional jumps
-                            possible_action = gamehandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
+                            possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
 
                             if (possible_action == CanDo.Jump || possible_action == CanDo.Both)
                             {
@@ -173,10 +173,10 @@ public class Chipaction : MonoBehaviour
                 can_jump = false;
                 has_jumped = false;
                 UpdateCurrentPositions();
-                gamehandler.ResetSectors();
-                gamehandler.CheckIsKing();
-                gamehandler.UpdateGameScore();
-                gamehandler.EndTurn();
+                gameHandler.ResetSectors();
+                gameHandler.CheckIsKing();
+                gameHandler.UpdateGameScore();
+                gameHandler.EndTurn();
                 DeselectChip();
             }
         }

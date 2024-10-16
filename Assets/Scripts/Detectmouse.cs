@@ -3,24 +3,24 @@ using UnityEngine;
 public class Detectmouse : MonoBehaviour
 {
     public Camera Defaultcamera;
-    public Camera Camerared;
-    public Camera Camerablue;
-    public Camera Spectator;
+    public Camera CameraRed;
+    public Camera CameraBlue;
+    public Camera SpectatorCamera;
     public Gamehandler gamehandler;
-    public Camerahandler camerahandler;
+    public Camerahandler cameraHandler;
     private Chipaction selectedchip = null; //track the currently selected chip
 
     void Start()
     {
         gamehandler = FindObjectOfType<Gamehandler>();
-        camerahandler = FindObjectOfType<Camerahandler>();
+        cameraHandler = FindObjectOfType<Camerahandler>();
 
         if (gamehandler == null)
         {
             Debug.LogError("Gamehandler not found in the scene! Ensure there is only one Gamehandler.");
         }
 
-        if (camerahandler == null)
+        if (cameraHandler == null)
         {
             Debug.LogError("Camerahandler not found in the scene! Ensure there is only one Camerahandler.");
         }
@@ -30,7 +30,7 @@ public class Detectmouse : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Camerahandler.ActiveCamera currentcamera = camerahandler.GetActiveCamera();
+            Camerahandler.ActiveCamera currentcamera = cameraHandler.GetActiveCamera();
 
             Ray ray = new Ray();
             RaycastHit hit;
@@ -42,17 +42,17 @@ public class Detectmouse : MonoBehaviour
 
             else if (currentcamera == Camerahandler.ActiveCamera.Red)
             {
-                ray = Camerared.ScreenPointToRay(Input.mousePosition);
+                ray = CameraRed.ScreenPointToRay(Input.mousePosition);
             }
 
             else if (currentcamera == Camerahandler.ActiveCamera.Blue)
             {
-                ray = Camerablue.ScreenPointToRay(Input.mousePosition);
+                ray = CameraBlue.ScreenPointToRay(Input.mousePosition);
             }
 
             else if (currentcamera == Camerahandler.ActiveCamera.Spectator)
             {
-                ray = Spectator.ScreenPointToRay(Input.mousePosition);
+                ray = SpectatorCamera.ScreenPointToRay(Input.mousePosition);
             }
 
             else

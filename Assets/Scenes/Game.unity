@@ -594,11 +594,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Defaultcamera: {fileID: 963194227}
-  Camerared: {fileID: 1050231290}
-  Camerablue: {fileID: 290542521}
-  Spectator: {fileID: 1141487474}
-  gamehandler: {fileID: 0}
-  camerahandler: {fileID: 0}
+  CameraRed: {fileID: 1050231290}
+  CameraBlue: {fileID: 290542521}
+  SpectatorCamera: {fileID: 1141487474}
+  gamehandler: {fileID: 1827834975}
+  cameraHandler: {fileID: 46869452}
 --- !u!1 &544180587
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f36dc89bb625b4fa2547bac172a10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamehandler: {fileID: 1827834975}
+  gameHandler: {fileID: 1827834975}
   Boardsector: {fileID: 1314988101}
   Redchip: {fileID: 2023750062}
   Bluechip: {fileID: 1443689417}
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d38e5bf1cdac284faa87aa81d83636f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameHandler: {fileID: 1827834975}
+  gameHandler: {fileID: 1827834975}
   ShowRed: {fileID: 773429419}
   ShowBlue: {fileID: 1653208058}
   ShowResult: {fileID: 726377337}
@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1c95bbfe72f673a458109133105e8268, type: 2}
-  gamehandler: {fileID: 0}
+  gameHandler: {fileID: 1827834975}
   is_playable: 0
   isclicked: 0
 --- !u!1 &1443689417
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   can_move: 1
   can_jump: 0
   has_jumped: 0
-  gamehandler: {fileID: 1827834975}
+  gameHandler: {fileID: 1827834975}
 --- !u!1001 &1470538847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2285,10 +2285,10 @@ MonoBehaviour:
   sectorspacing_x: 2.5
   sectorspacing_z: 2.125
   tolerance: 0.05
-  turn: 0
   width: 8
   height: 8
   initialturn: 0
+  turn: 0
   alive_reds: 12
   movable_reds: 12
   alive_blues: 12
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   can_move: 1
   can_jump: 0
   has_jumped: 0
-  gamehandler: {fileID: 1827834975}
+  gameHandler: {fileID: 1827834975}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class Gridmanager : MonoBehaviour
 {
-    public Gamehandler gamehandler;
+    public Gamehandler gameHandler;
     [SerializeField] private GameObject Boardsector;
     [SerializeField] private GameObject Redchip;
     [SerializeField] private GameObject Bluechip;
 
     void GenerateGrid()
     {
-        for (int x = 0; x < gamehandler.width; x++)
+        for (int x = 0; x < gameHandler.width; x++)
         {
-            for (int z = 0; z < gamehandler.height; z++)
+            for (int z = 0; z < gameHandler.height; z++)
             {
                 //calculating the position for each sector
-                Vector3 spawnpos = new Vector3(x * gamehandler.sectorspacing_x, 0, z * gamehandler.sectorspacing_z);
+                Vector3 spawnpos = new Vector3(x * gameHandler.sectorspacing_x, 0, z * gameHandler.sectorspacing_z);
                 var spawnedsector = Instantiate(Boardsector, spawnpos, Quaternion.identity);
                 Sector sector = spawnedsector.GetComponent<Sector>();
                 spawnedsector.name = $"Sector {x}_{z}";
@@ -28,7 +28,7 @@ public class Gridmanager : MonoBehaviour
                     sector.GetComponent<MeshRenderer>().material.color = Color.black;
 
                     //there should be no white sectors added to gamehandler's list for no reason
-                    gamehandler.AddToSectors(sector);
+                    gameHandler.AddToSectors(sector);
                 }
 
                 //spawn red chips only on playable sectors and in the bottom third of the board
@@ -55,17 +55,17 @@ public class Gridmanager : MonoBehaviour
                     Chipaction red = spawned_redparent.GetComponent<Chipaction>();
                     red.AssignTeam(Chipaction.TeamColor.Red);
                     spawned_redparent.name = $"RedChip {x}_{z}";
-                    gamehandler.AddToChips(red);
+                    gameHandler.AddToChips(red);
 
                     //only the front row chips are able to be moved in the beginning
-                    if (spawnpos.z == gamehandler.sectorspacing_z * 2)
+                    if (spawnpos.z == gameHandler.sectorspacing_z * 2)
                     {
                         red.can_move = true;
                     }
                 }
 
                 //spawn blue chips only on playable sectors and in the top third of the board
-                if (is_playable && z >= (gamehandler.height * 2) / 3)
+                if (is_playable && z >= (gameHandler.height * 2) / 3)
                 {
                     Vector3 chipspawnpos = new Vector3(spawnpos.x, 0.39f, spawnpos.z);
                     var spawned_blueparent = Instantiate(Bluechip, chipspawnpos, Quaternion.Euler(-90f, 0, 0));
@@ -81,17 +81,15 @@ public class Gridmanager : MonoBehaviour
 
                     if (king != null)
                     {
-                        //king chips should be rotated 180 degrees to display the crown correclty
                         king.SetPositionAndRotation(chipspawnpos, Quaternion.Euler(-90f, 0, -180f));
                     }
 
                     Chipaction blue = spawned_blueparent.GetComponent<Chipaction>();
                     blue.AssignTeam(Chipaction.TeamColor.Blue);
                     spawned_blueparent.name = $"BlueChip {x}_{z}";
-                    gamehandler.AddToChips(blue);
+                    gameHandler.AddToChips(blue);
 
-                    //only the front row chips are able to be moved in the beginning
-                    if (spawnpos.z == gamehandler.sectorspacing_z * 5)
+                    if (spawnpos.z == gameHandler.sectorspacing_z * 5)
                     {
                         blue.can_move = true;
                     }
@@ -102,9 +100,9 @@ public class Gridmanager : MonoBehaviour
 
     void Start()
     {
-        gamehandler = FindObjectOfType<Gamehandler>();
+        gameHandler = FindObjectOfType<Gamehandler>();
 
-        if (gamehandler == null)
+        if (gameHandler == null)
         {
             Debug.LogError("Gamehandler not found in the scene! Ensure there is only one Gamehandler.");
         }

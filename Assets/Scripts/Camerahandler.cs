@@ -54,7 +54,7 @@ public class Camerahandler : MonoBehaviour
         activecamera = ActiveCamera.Blue;
     }
 
-    public void SwitchToSpectatorCamera() // Made this public so we can call it from outside
+    public void SwitchToSpectatorCamera()
     {
         SpectatorCamera.SetActive(true);
         CameraBlue.SetActive(false);
@@ -91,7 +91,7 @@ public class Camerahandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SwitchToSpectatorCamera(); // Change the camera when pressing F
+            SwitchToSpectatorCamera();
         }
     }
 }

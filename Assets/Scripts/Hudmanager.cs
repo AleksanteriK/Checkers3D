@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Hudmanager : MonoBehaviour
 {
-    public Gamehandler GameHandler;
+    public Gamehandler gameHandler;
     public Text ShowRed;
     public Text ShowBlue;
     public Text ShowResult;
@@ -12,25 +12,25 @@ public class Hudmanager : MonoBehaviour
 
     void Update()
     {
-        ShowRed.text = GameHandler.GetAliveReds().ToString();
-        ShowBlue.text = GameHandler.GetAliveBlues().ToString();
+        ShowRed.text = gameHandler.GetAliveReds().ToString();
+        ShowBlue.text = gameHandler.GetAliveBlues().ToString();
 
-        if ((GameHandler.GetResult() == Gamehandler.Result.Red || GameHandler.GetResult() == Gamehandler.Result.Blue ||
-             GameHandler.GetResult() == Gamehandler.Result.Tie) && GameHandler.GameHasEnded() == true)
+        if ((gameHandler.GetResult() == Gamehandler.Result.Red || gameHandler.GetResult() == Gamehandler.Result.Blue ||
+             gameHandler.GetResult() == Gamehandler.Result.Tie) && gameHandler.GameHasEnded() == true)
         {
-            if (GameHandler.GetResult() == Gamehandler.Result.Red)
+            if (gameHandler.GetResult() == Gamehandler.Result.Red)
             {
                 ShowResult.color = Color.red;
                 ShowResult.text = red_winner;
             }
             
-            if (GameHandler.GetResult() == Gamehandler.Result.Blue)
+            if (gameHandler.GetResult() == Gamehandler.Result.Blue)
             {
                 ShowResult.color = Color.blue;
                 ShowResult.text = blue_winner;
             }
 
-            if (GameHandler.GetResult() == Gamehandler.Result.Tie)
+            if (gameHandler.GetResult() == Gamehandler.Result.Tie)
             {
                 ShowResult.color = Color.green;
                 ShowResult.text = tie_game;

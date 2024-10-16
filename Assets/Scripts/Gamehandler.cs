@@ -38,10 +38,10 @@ public class Gamehandler : MonoBehaviour
     public float sectorspacing_x = 2.5f;
     public float sectorspacing_z = 2.125f;
     public float tolerance = 0.05f; //for comparing float values
-    public Turn turn;
     public int width = 8;
     public int height = 8;
     public int initialturn; //store the int variable which is get from main menu playerprefs
+    public Turn turn;
     private Result result;
     private bool gameover = false;
     [SerializeField] int alive_reds = 12;
@@ -440,27 +440,27 @@ public class Gamehandler : MonoBehaviour
         }
 
         //determine which direction's jumpable sectors to check
-        List<Component> targetOpponents = null;
+        List<Component> target_opponents = null;
         List<Component> target_sectors = null;
 
         if (jumpablesectors_on_the_upright_path.Contains(matchedSector))
         {
-            targetOpponents = opponents_on_the_upright_path;
+            target_opponents = opponents_on_the_upright_path;
             target_sectors = jumpablesectors_on_the_upright_path;
         }
         else if (jumpablesectors_on_the_upleft_path.Contains(matchedSector))
         {
-            targetOpponents = opponents_on_the_upleft_path;
+            target_opponents = opponents_on_the_upleft_path;
             target_sectors = jumpablesectors_on_the_upleft_path;
         }
         else if (jumpablesectors_on_the_downright_path.Contains(matchedSector))
         {
-            targetOpponents = opponents_on_the_downright_path;
+            target_opponents = opponents_on_the_downright_path;
             target_sectors = jumpablesectors_on_the_downright_path;
         }
         else if (jumpablesectors_on_the_downleft_path.Contains(matchedSector))
         {
-            targetOpponents = opponents_on_the_downleft_path;
+            target_opponents = opponents_on_the_downleft_path;
             target_sectors = jumpablesectors_on_the_downleft_path;
         }
         else
@@ -469,14 +469,14 @@ public class Gamehandler : MonoBehaviour
         }
 
         //remove the opponents from the matched direction's list
-        for (int j = 0; j < targetOpponents.Count; j++)
+        for (int j = 0; j < target_opponents.Count; j++)
         {
-            GameObject opponent_chip = targetOpponents[j].gameObject;
+            GameObject opponent_chip = target_opponents[j].gameObject;
             opponent_chip.SetActive(false);
-            chips.Remove(targetOpponents[j]);
+            chips.Remove(target_opponents[j]);
         }
 
-        targetOpponents.Clear();
+        target_opponents.Clear();
     }
 
     public void AddToSectors(Sector sector)

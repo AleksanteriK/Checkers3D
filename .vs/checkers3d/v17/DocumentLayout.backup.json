@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gridmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,20 +15,28 @@
       "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\detectmouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|d:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\camerahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\camerahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|d:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\spectatorcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\spectatorcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spectatorcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|d:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\hudmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hudmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|D:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|d:\\dotnet_assignments\\checkers3d\\checkers3d\\assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AA83E9C-F010-6BE5-3789-D3C95628E391}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Gamehandler.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Gamehandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamehandler.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Gamehandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gamehandler.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwAMAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOEBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T10:56:36.075Z",
               "IsPinned": true,
@@ -60,16 +64,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Sector.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Sector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Sector.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Sector.cs",
               "RelativeToolTip": "Assets\\Scripts\\Sector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T11:18:13.359Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hudmanager.cs",
+              "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Hudmanager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Hudmanager.cs",
+              "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Hudmanager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Hudmanager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T18:56:40.832Z",
               "EditorCaption": ""
             },
             {
@@ -87,65 +104,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Mainmenu.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Mainmenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Mainmenu.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Mainmenu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Mainmenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T13:42:10.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Camerahandler.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Camerahandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Camerahandler.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Camerahandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Camerahandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwAwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-06T10:17:00.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Detectmouse.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Detectmouse.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Detectmouse.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Detectmouse.cs",
               "RelativeToolTip": "Assets\\Scripts\\Detectmouse.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T10:11:53.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Chipaction.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Chipaction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Chipaction.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Chipaction.cs",
               "RelativeToolTip": "Assets\\Scripts\\Chipaction.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAkwHEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T10:07:48.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Gridmanager.cs",
               "DocumentMoniker": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Gridmanager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gridmanager.cs",
               "ToolTip": "D:\\dotnet_assignments\\checkers3d\\checkers3d\\Assets\\Scripts\\Gridmanager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gridmanager.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAgwAUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T12:26:32.816Z",
               "EditorCaption": ""
