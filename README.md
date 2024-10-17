@@ -22,10 +22,10 @@ Aleksanteri Koivisto
 -Skybox HDR image is from [PolyHaven](https://polyhaven.com/hdris/skies)
 
 ## Screenshots
-<img src="gamemenu.JPG" width="720">
+<img src="Screenshots/gamemenu.JPG" width="720">
 
-<img src="defaultview.png" width="720">
+<img src="Screenshots/gameview.JPG" width="720">
 
-<img src="gameview.JPG" width="720">
+<img src="Screenshots/freecamera.png" width="720">
 
-<img src="freecamera.png" width="720">
+<img src="Screenshots/defaultview.png" width="720">
