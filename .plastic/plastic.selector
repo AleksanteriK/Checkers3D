@@ -1,4 +1,0 @@
-repository "checkers3d@Aakoo@cloud"
-  path "/"
-    br "/main"
-    co "/main"
