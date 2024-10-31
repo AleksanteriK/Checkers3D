@@ -1,0 +1,4 @@
+ignore.conf
+.vs/
+.plastic/
+obj/Debug
