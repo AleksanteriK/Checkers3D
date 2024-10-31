@@ -1,4 +1,7 @@
 ignore.conf
 .vs/
 .plastic/
-obj/Debug
+obj/
+Library/
+Logs/
+.vsconfig

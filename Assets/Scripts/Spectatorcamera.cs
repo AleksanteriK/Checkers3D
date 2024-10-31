@@ -18,6 +18,7 @@ public class Spectatorcamera : MonoBehaviour
             Movement();
             Rotation();
         }
+		
         else
         {
             Cursor.visible = true;

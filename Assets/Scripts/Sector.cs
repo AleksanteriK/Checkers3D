@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class Sector : MonoBehaviour
 {
     public Material material;
@@ -55,6 +56,7 @@ public class Sector : MonoBehaviour
             {
                 material = renderer.material;
             }
+			
             else
             {
                 Debug.LogError("Renderer or Material not found on the Sector object!");

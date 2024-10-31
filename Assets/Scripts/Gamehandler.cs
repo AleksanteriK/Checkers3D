@@ -33,7 +33,6 @@ public class Gamehandler : MonoBehaviour
         Tie
     }
 
-
     //spacing values of the gameboard sectors
     public float sectorspacing_x = 2.5f;
     public float sectorspacing_z = 2.125f;
@@ -349,7 +348,6 @@ public class Gamehandler : MonoBehaviour
                             break;
                         }
                     }
-                    
                 }
             }
         }
@@ -463,6 +461,7 @@ public class Gamehandler : MonoBehaviour
             target_opponents = opponents_on_the_downleft_path;
             target_sectors = jumpablesectors_on_the_downleft_path;
         }
+		
         else
         {
             return;
@@ -546,7 +545,6 @@ public class Gamehandler : MonoBehaviour
                             movable_reds++;
                         }
                     }
-
                     else if (chipAction.GetTeamColor() == Chipaction.TeamColor.Blue)
                     {
                         alive_blues++;
@@ -569,14 +567,12 @@ public class Gamehandler : MonoBehaviour
             turn = Turn.None;
             gameover = true;
         }
-
         else if (alive_reds == 0 || movable_reds == 0)
         {
             result = Result.Blue;
             turn = Turn.None;
             gameover = true;
         }
-
         else if (movable_reds == 0 && movable_blues == 0)
         {
             result = Result.Tie;
@@ -651,6 +647,7 @@ public class Gamehandler : MonoBehaviour
     }
     void Update()
     {
+		//return to menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
