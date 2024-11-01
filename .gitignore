@@ -5,3 +5,5 @@ obj/
 Library/
 Logs/
 .vsconfig
+Assets/Scripts/DebugGamehandler.cs
+Assets/Scripts/DebugHudmanager.cs

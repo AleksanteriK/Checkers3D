@@ -40,6 +40,7 @@ public class Gamehandler : MonoBehaviour
     public int width = 8;
     public int height = 8;
     public int initialturn; //store the int variable which is get from main menu playerprefs
+    public Camerahandler cameraHandler;
     public Turn turn;
     private Result result;
     private bool gameover = false;
@@ -67,7 +68,7 @@ public class Gamehandler : MonoBehaviour
     blue chips and red chips are placed in the 3D space differently. When blue needs to move forward,
      it's z vector position needs to be decremented, and the red chip's z vector position needs to be increased instead*/
 
-    public CanDo CheckPossibilities(float current_x, float current_z, bool is_king, Chipaction.TeamColor teamcolor, bool has_jumped)
+    public CanDo CheckPossibilities(float current_x, float current_z, bool is_king, Chipaction.TeamColor teamcolor, bool has_jumped, bool is_selected)
     {
         availablesectors.Clear();
         jumpablesectors.Clear();
@@ -89,55 +90,55 @@ public class Gamehandler : MonoBehaviour
 
         if (teamcolor == TeamColor.Red)
         {
-            CheckAndAddSector(current_x + move_x_left, current_z + move_z_forward, teamcolor, Directions.UpLeft, has_jumped);
-            CheckAndAddSector(current_x + move_x_right, current_z + move_z_forward, teamcolor, Directions.UpRight, has_jumped);
+            CheckAndAddSector(current_x + move_x_left, current_z + move_z_forward, teamcolor, Directions.UpLeft, has_jumped, is_selected);
+            CheckAndAddSector(current_x + move_x_right, current_z + move_z_forward, teamcolor, Directions.UpRight, has_jumped, is_selected);
         }
 
         if (teamcolor == TeamColor.Blue)
         {
-            CheckAndAddSector(current_x + move_x_left, current_z + move_z_forward, teamcolor, Directions.UpRight, has_jumped);
-            CheckAndAddSector(current_x + move_x_right, current_z + move_z_forward, teamcolor, Directions.UpLeft, has_jumped);
+            CheckAndAddSector(current_x + move_x_left, current_z + move_z_forward, teamcolor, Directions.UpRight, has_jumped, is_selected);
+            CheckAndAddSector(current_x + move_x_right, current_z + move_z_forward, teamcolor, Directions.UpLeft, has_jumped, is_selected);
         }
 
         if (is_king)
         {
             if (teamcolor == TeamColor.Red)
             {
-                CheckAndAddSector(current_x + move_x_left, current_z + move_z_backward, teamcolor, Directions.DownLeft, has_jumped);
-                CheckAndAddSector(current_x + move_x_right, current_z + move_z_backward, teamcolor, Directions.DownRight, has_jumped);
+                CheckAndAddSector(current_x + move_x_left, current_z + move_z_backward, teamcolor, Directions.DownLeft, has_jumped, is_selected);
+                CheckAndAddSector(current_x + move_x_right, current_z + move_z_backward, teamcolor, Directions.DownRight, has_jumped, is_selected);
             }
 
             if (teamcolor == TeamColor.Blue)
             {
-                CheckAndAddSector(current_x + move_x_left, current_z + move_z_backward, teamcolor, Directions.DownRight, has_jumped);
-                CheckAndAddSector(current_x + move_x_right, current_z + move_z_backward, teamcolor, Directions.DownLeft, has_jumped);
+                CheckAndAddSector(current_x + move_x_left, current_z + move_z_backward, teamcolor, Directions.DownRight, has_jumped, is_selected);
+                CheckAndAddSector(current_x + move_x_right, current_z + move_z_backward, teamcolor, Directions.DownLeft, has_jumped, is_selected);
             }
         }
 
         if (teamcolor == TeamColor.Red)
         {
-            CheckForJump(current_x, current_z, move_x_left, move_z_forward, is_king, teamcolor, Directions.UpLeft, has_jumped);
-            CheckForJump(current_x, current_z, move_x_right, move_z_forward, is_king, teamcolor, Directions.UpRight, has_jumped);
+            CheckForJump(current_x, current_z, move_x_left, move_z_forward, is_king, teamcolor, Directions.UpLeft, has_jumped, is_selected);
+            CheckForJump(current_x, current_z, move_x_right, move_z_forward, is_king, teamcolor, Directions.UpRight, has_jumped, is_selected);
         }
 
         if (teamcolor == TeamColor.Blue)
         {
-            CheckForJump(current_x, current_z, move_x_left, move_z_forward, is_king, teamcolor, Directions.UpRight, has_jumped);
-            CheckForJump(current_x, current_z, move_x_right, move_z_forward, is_king, teamcolor, Directions.UpLeft, has_jumped);
+            CheckForJump(current_x, current_z, move_x_left, move_z_forward, is_king, teamcolor, Directions.UpRight, has_jumped, is_selected);
+            CheckForJump(current_x, current_z, move_x_right, move_z_forward, is_king, teamcolor, Directions.UpLeft, has_jumped, is_selected);
         }
 
         if (is_king)
         {
             if (teamcolor == TeamColor.Red)
             {
-                CheckForJump(current_x, current_z, move_x_left, move_z_backward, is_king, teamcolor, Directions.DownLeft, has_jumped);
-                CheckForJump(current_x, current_z, move_x_right, move_z_backward, is_king, teamcolor, Directions.DownRight, has_jumped);
+                CheckForJump(current_x, current_z, move_x_left, move_z_backward, is_king, teamcolor, Directions.DownLeft, has_jumped, is_selected);
+                CheckForJump(current_x, current_z, move_x_right, move_z_backward, is_king, teamcolor, Directions.DownRight, has_jumped, is_selected);
             }
 
             if (teamcolor == TeamColor.Blue)
             {
-                CheckForJump(current_x, current_z, move_x_left, move_z_backward, is_king, teamcolor, Directions.DownRight, has_jumped);
-                CheckForJump(current_x, current_z, move_x_right, move_z_backward, is_king, teamcolor, Directions.DownLeft, has_jumped);
+                CheckForJump(current_x, current_z, move_x_left, move_z_backward, is_king, teamcolor, Directions.DownRight, has_jumped, is_selected);
+                CheckForJump(current_x, current_z, move_x_right, move_z_backward, is_king, teamcolor, Directions.DownLeft, has_jumped, is_selected);
             }
         }
 
@@ -151,25 +152,25 @@ public class Gamehandler : MonoBehaviour
                 if (jump_x > current_x && jump_z > current_z && teamcolor == TeamColor.Red)
                 {
                     jumpablesectors_on_the_upright_path.Add(jumpablesectors[i]);
-                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.UpRight, has_jumped);
+                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.UpRight, has_jumped, is_selected);
                 }
 
                 else if (jump_x < current_x && jump_z > current_z && teamcolor == TeamColor.Red)
                 {
                     jumpablesectors_on_the_upleft_path.Add(jumpablesectors[i]);
-                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.UpLeft, has_jumped);
+                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.UpLeft, has_jumped, is_selected);
                 }
 
                 else if (jump_x < current_x && jump_z < current_z && teamcolor == TeamColor.Red)
                 {
                     jumpablesectors_on_the_downleft_path.Add(jumpablesectors[i]);
-                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.DownLeft, has_jumped);
+                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.DownLeft, has_jumped, is_selected);
                 }
 
                 else if (jump_x > current_x && jump_z < current_z && teamcolor == TeamColor.Red)
                 {
                     jumpablesectors_on_the_downright_path.Add(jumpablesectors[i]);
-                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.DownRight, has_jumped);
+                    CheckAndAddSector(jump_x, jump_z, teamcolor, Directions.DownRight, has_jumped, is_selected);
                 }
             }
         }
@@ -205,7 +206,7 @@ public class Gamehandler : MonoBehaviour
         return CanDo.None;
     }
 
-    private void CheckAndAddSector(float target_x, float target_z, Chipaction.TeamColor teamcolor, Directions direction, bool has_jumped)
+    private void CheckAndAddSector(float target_x, float target_z, Chipaction.TeamColor teamcolor, Directions direction, bool has_jumped, bool is_selected)
     {
         if (target_x >= 0 && target_x < width * sectorspacing_x && target_z >= 0 && target_z < height * sectorspacing_z)
         {
@@ -223,7 +224,13 @@ public class Gamehandler : MonoBehaviour
                         if (has_jumped == false)
                         {
                             availablesectors.Add(sector);
-                            sector.GetComponent<MeshRenderer>().material.color = Color.green;
+
+                            //only highlight the available sector, if the chip is selected, otherwise the sectors will be
+                            //colored for no reason when gamehandler is checking the status of each chip can they move
+                            if (is_selected == true)
+                            {
+                                sector.GetComponent<MeshRenderer>().material.color = Color.green;
+                            }
                         }
                     }
 
@@ -247,7 +254,13 @@ public class Gamehandler : MonoBehaviour
                                 {
                                     availablesectors.Add(sectorbehindopponent);
                                     jumpablesectors.Add(sectorbehindopponent);
-                                    sectorbehindopponent.GetComponent<MeshRenderer>().material.color = Color.green;
+
+                                    //only highlight the available sector, if the chip is selected, otherwise the sectors will be
+                                    //colored for no reason when gamehandler is checking the status of each chip can they move
+                                    if (is_selected == true)
+                                    {
+                                        sectorbehindopponent.GetComponent<MeshRenderer>().material.color = Color.green;
+                                    }
 
                                     if (teamcolor == Chipaction.TeamColor.Blue)
                                     {
@@ -296,7 +309,7 @@ public class Gamehandler : MonoBehaviour
         }
     }
 
-    private void CheckForJump(float current_x, float current_z, float move_x, float move_z, bool is_king, Chipaction.TeamColor teamcolor, Directions direction, bool has_jumped)
+    private void CheckForJump(float current_x, float current_z, float move_x, float move_z, bool is_king, Chipaction.TeamColor teamcolor, Directions direction, bool has_jumped, bool is_selected)
     {
         foreach (var sector in sectors)
         {
@@ -325,7 +338,13 @@ public class Gamehandler : MonoBehaviour
                             {
                                 availablesectors.Add(sectorbehind);
                                 jumpablesectors.Add(sectorbehind);
-                                sectorbehind.GetComponent<MeshRenderer>().material.color = Color.green;
+
+                                //only highlight the available sector, if the chip is selected, otherwise the sectors will be
+                                //colored for no reason when gamehandler is checking the status of each chip can they move
+                                if (is_selected == true)
+                                {
+                                    sectorbehind.GetComponent<MeshRenderer>().material.color = Color.green;
+                                }
 
                                 //add to direction-specific jumpable sector list
                                 switch (direction)
@@ -536,6 +555,9 @@ public class Gamehandler : MonoBehaviour
                 Chipaction chipAction = chip.GetComponent<Chipaction>();
                 if (chipAction != null && chipAction.isActiveAndEnabled && chip.gameObject.activeSelf)
                 {
+                    //first check the ability to move to keep track of movable chips
+                    IsAbleToMove(chipAction);
+
                     if (chipAction.GetTeamColor() == Chipaction.TeamColor.Red)
                     {
                         alive_reds++;
@@ -593,6 +615,7 @@ public class Gamehandler : MonoBehaviour
             turn = Turn.Red;
         }
 
+        StartCoroutine(cameraHandler.AutoChange());
         CheckGame();
     }
 
@@ -629,6 +652,22 @@ public class Gamehandler : MonoBehaviour
     public bool GameHasEnded()
     {
         return gameover;
+    }
+
+    //called in UpdateGameScore() to keep track of movable chips after every turn
+    void IsAbleToMove(Chipaction chip)
+    {
+        CanDo possibility = CheckPossibilities(chip.GetCurrentXpos(), chip.GetCurrentZpos(), chip.IsKing(), chip.GetTeamColor(), chip.has_jumped, chip.is_selected);
+
+        if (possibility == CanDo.None)
+        {
+            chip.can_move = false;
+        }
+
+        else
+        {
+            chip.can_move = true;
+        }
     }
 
     void Awake()

@@ -17,14 +17,14 @@ public class Chipaction : MonoBehaviour
     }
 
     public bool is_selected = false;
-    public bool can_move = true;
+    public bool can_move = true; //initially everyone can move
     public bool can_jump;
     public bool has_jumped = false;
     public Gamehandler gameHandler;
-    private bool is_king = false;
     float current_x;
     float current_z;
     float current_y;
+    private bool is_king = false;
     private TeamColor teamcolor;
     private CanDo possible_action;
     private GameObject soldiermodel;
@@ -34,7 +34,7 @@ public class Chipaction : MonoBehaviour
     {
         is_selected = true;
         gameHandler.ResetSectors();
-        possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
+        possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped, is_selected);
 
         if (possible_action == CanDo.None)
         {
@@ -95,6 +95,22 @@ public class Chipaction : MonoBehaviour
         current_y = transform.position.y;
     }
 
+    //these getters are used in gamehandler to keep record of how many chips are movable
+    public float GetCurrentZpos()
+    {
+        return current_z;
+    }
+
+    public float GetCurrentXpos()
+    {
+        return current_x;
+    }
+
+    public bool IsKing()
+    {
+        return is_king;
+    }
+
     void Awake()
     {
         //on initialization, set the soldier model active first
@@ -153,7 +169,7 @@ public class Chipaction : MonoBehaviour
                             gameHandler.ResetSectors();
 
                             //check for additional jumps
-                            possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped);
+                            possible_action = gameHandler.CheckPossibilities(current_x, current_z, is_king, teamcolor, has_jumped, is_selected);
 
                             if (possible_action == CanDo.Jump || possible_action == CanDo.Both)
                             {

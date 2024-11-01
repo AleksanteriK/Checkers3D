@@ -31,6 +31,6 @@ public class Mainmenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        Debug.Log("Player quit the game");
+        Debug.Log("Player quit the game Checkers3D");
     }
 }

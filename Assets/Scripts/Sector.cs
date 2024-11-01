@@ -7,7 +7,7 @@ public class Sector : MonoBehaviour
     public bool is_playable = false;
     public bool isclicked = false;
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
         if (!isclicked)
         {

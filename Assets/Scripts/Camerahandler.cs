@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Camerahandler : MonoBehaviour
@@ -10,6 +11,8 @@ public class Camerahandler : MonoBehaviour
         Spectator
     }
 
+    public bool automode = false;
+    public Gamehandler gamehandler;
     ActiveCamera activecamera;
     [SerializeField] GameObject DefaultCamera;
     [SerializeField] GameObject CameraBlue;
@@ -54,6 +57,24 @@ public class Camerahandler : MonoBehaviour
         activecamera = ActiveCamera.Blue;
     }
 
+    public IEnumerator AutoChange()
+    {
+        yield return new WaitForSeconds(0.25f);
+
+        if (automode == true)
+        {
+            if (gamehandler.turn == Gamehandler.Turn.Red)
+            {
+                SwitchToRedCamera();
+            }
+
+            else
+            {
+                SwitchToBlueCamera();
+            }
+        }
+    }
+
     public void SwitchToSpectatorCamera()
     {
         SpectatorCamera.SetActive(true);
@@ -74,24 +95,52 @@ public class Camerahandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
         {
             SwitchToDefaultCamera();
+            automode = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchToRedCamera();
+            automode = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad2))
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
         {
             SwitchToBlueCamera();
+            automode = false;
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             SwitchToSpectatorCamera();
+            automode = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (automode == false)
+            {
+                automode = true;
+
+                if (gamehandler.turn == Gamehandler.Turn.Red)
+                {
+                    SwitchToRedCamera();
+                }
+
+                else
+                {
+                    SwitchToBlueCamera();
+                }
+            }
+
+            else
+            {
+                automode = false;
+                SwitchToDefaultCamera();
+            }
         }
     }
 }

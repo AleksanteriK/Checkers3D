@@ -8,24 +8,6 @@ public class Spectatorcamera : MonoBehaviour
     float sprint_speed = 7;
     float current_speed;
 
-    void Update()
-    {
-        if (cameraHandler.GetActiveCamera() == Camerahandler.ActiveCamera.Spectator)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-
-            Movement();
-            Rotation();
-        }
-		
-        else
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-    }
-
     void Rotation()
     {
         Vector3 MouseInput = new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
@@ -49,5 +31,22 @@ public class Spectatorcamera : MonoBehaviour
         }
 
         transform.Translate(input * current_speed * Time.deltaTime);
+    }
+
+    void Update()
+    {
+        if (cameraHandler.GetActiveCamera() == Camerahandler.ActiveCamera.Spectator)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Movement();
+            Rotation();
+        }
+		
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

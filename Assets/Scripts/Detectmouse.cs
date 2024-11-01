@@ -63,7 +63,7 @@ public class Detectmouse : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Chipaction chip = hit.transform.GetComponent<Chipaction>();
+                Chipaction chip = hit.transform.GetComponentInParent<Chipaction>();
 
                 if (chip != null)
                 {
