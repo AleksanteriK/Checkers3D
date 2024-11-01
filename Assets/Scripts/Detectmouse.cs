@@ -8,6 +8,7 @@ public class Detectmouse : MonoBehaviour
     public Camera SpectatorCamera;
     public Gamehandler gamehandler;
     public Camerahandler cameraHandler;
+    public Hudmanager hudManager;
     private Chipaction selectedchip = null; //track the currently selected chip
 
     void Start()
@@ -28,66 +29,70 @@ public class Detectmouse : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //if the controls menu is open, don't use raycasting to other objects (except sectors)
+        if (hudManager.IsControlsMenuOpen() == false)
         {
-            Camerahandler.ActiveCamera currentcamera = cameraHandler.GetActiveCamera();
-
-            Ray ray = new Ray();
-            RaycastHit hit;
-
-            if (currentcamera == Camerahandler.ActiveCamera.Default)
+            if (Input.GetMouseButtonDown(0))
             {
-                ray = Defaultcamera.ScreenPointToRay(Input.mousePosition);
-            }
+                Camerahandler.ActiveCamera currentcamera = cameraHandler.GetActiveCamera();
 
-            else if (currentcamera == Camerahandler.ActiveCamera.Red)
-            {
-                ray = CameraRed.ScreenPointToRay(Input.mousePosition);
-            }
+                Ray ray = new Ray();
+                RaycastHit hit;
 
-            else if (currentcamera == Camerahandler.ActiveCamera.Blue)
-            {
-                ray = CameraBlue.ScreenPointToRay(Input.mousePosition);
-            }
-
-            else if (currentcamera == Camerahandler.ActiveCamera.Spectator)
-            {
-                ray = SpectatorCamera.ScreenPointToRay(Input.mousePosition);
-            }
-
-            else
-            {
-                Debug.LogWarning("No valid camera is active.");
-                return;
-            }
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Chipaction chip = hit.transform.GetComponentInParent<Chipaction>();
-
-                if (chip != null)
+                if (currentcamera == Camerahandler.ActiveCamera.Default)
                 {
-                    if ((chip.GetTeamColor() == Chipaction.TeamColor.Red && gamehandler.turn == Gamehandler.Turn.Red) ||
-                        (chip.GetTeamColor() == Chipaction.TeamColor.Blue && gamehandler.turn == Gamehandler.Turn.Blue))
+                    ray = Defaultcamera.ScreenPointToRay(Input.mousePosition);
+                }
+
+                else if (currentcamera == Camerahandler.ActiveCamera.Red)
+                {
+                    ray = CameraRed.ScreenPointToRay(Input.mousePosition);
+                }
+
+                else if (currentcamera == Camerahandler.ActiveCamera.Blue)
+                {
+                    ray = CameraBlue.ScreenPointToRay(Input.mousePosition);
+                }
+
+                else if (currentcamera == Camerahandler.ActiveCamera.Spectator)
+                {
+                    ray = SpectatorCamera.ScreenPointToRay(Input.mousePosition);
+                }
+
+                else
+                {
+                    Debug.LogWarning("No valid camera is active.");
+                    return;
+                }
+
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    Chipaction chip = hit.transform.GetComponentInParent<Chipaction>();
+
+                    if (chip != null)
                     {
-                        //if there is already a selected chip and it's different from the clicked chip
-                        if (selectedchip != null && selectedchip != chip)
+                        if ((chip.GetTeamColor() == Chipaction.TeamColor.Red && gamehandler.turn == Gamehandler.Turn.Red) ||
+                            (chip.GetTeamColor() == Chipaction.TeamColor.Blue && gamehandler.turn == Gamehandler.Turn.Blue))
                         {
-                            selectedchip.DeselectChip();
-                        }
+                            //if there is already a selected chip and it's different from the clicked chip
+                            if (selectedchip != null && selectedchip != chip)
+                            {
+                                selectedchip.DeselectChip();
+                            }
 
-                        if (!chip.is_selected)
-                        {
-                            chip.SelectChip();
-                            selectedchip = chip;
-                            
-                        }
+                            if (!chip.is_selected)
+                            {
+                                chip.SelectChip();
+                                selectedchip = chip;
 
-                        else
-                        {
-                            //if the clicked chip is already selected, deselect it
-                            chip.DeselectChip();
-                            selectedchip = null;
+                            }
+
+                            else
+                            {
+                                //if the clicked chip is already selected, deselect it
+                                chip.DeselectChip();
+                                selectedchip = null;
+                            }
                         }
                     }
                 }

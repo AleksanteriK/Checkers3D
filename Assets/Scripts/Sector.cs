@@ -4,35 +4,40 @@ public class Sector : MonoBehaviour
 {
     public Material material;
     public Gamehandler gameHandler;
+    public Hudmanager hudManager;
     public bool is_playable = false;
     public bool isclicked = false;
 
     void OnMouseDown()
     {
-        if (!isclicked)
+        //same here like in Detectmouse.cs, don't detect clicking the sector if controls menu is open
+        if (hudManager.IsControlsMenuOpen() == false)
         {
-            isclicked = true;
-
-            //check if there is any other sectors selected, deselect them to avoid conflict
-            foreach (var sector in gameHandler.GetSectors())
+            if (!isclicked)
             {
-                if (sector != null && sector.name != name && sector.GetComponent<Sector>().isclicked == true)
+                isclicked = true;
+
+                //check if there is any other sectors selected, deselect them to avoid conflict
+                foreach (var sector in gameHandler.GetSectors())
                 {
-                    sector.GetComponent<Sector>().isclicked = false;
+                    if (sector != null && sector.name != name && sector.GetComponent<Sector>().isclicked == true)
+                    {
+                        sector.GetComponent<Sector>().isclicked = false;
+                    }
                 }
             }
-        }
 
-        else
-        {
-            isclicked = false;
-
-            //same here
-            foreach (var sector in gameHandler.GetSectors())
+            else
             {
-                if (sector != null && sector.name != name && sector.GetComponent<Sector>().isclicked == true)
+                isclicked = false;
+
+                //same here
+                foreach (var sector in gameHandler.GetSectors())
                 {
-                    sector.GetComponent<Sector>().isclicked = false;
+                    if (sector != null && sector.name != name && sector.GetComponent<Sector>().isclicked == true)
+                    {
+                        sector.GetComponent<Sector>().isclicked = false;
+                    }
                 }
             }
         }

@@ -15,6 +15,12 @@ public class Hudmanager : MonoBehaviour
     public Text ShowResult;
     public Text ShowCamera;
 
+    //this is used in Detectmouse.cs to check whether the controls menu is open to disable raycasting
+    public bool IsControlsMenuOpen()
+    {
+        return ControlsMenuPanel.activeSelf;
+    }
+
     public void ShowControlsInstructions()
     {
         ControlsMenuPanel.SetActive(true);
@@ -47,9 +53,9 @@ public class Hudmanager : MonoBehaviour
         {
             ShowCamera.text = "Auto";
         }
-
-        if (cameraHandler.GetActiveCamera() == Camerahandler.ActiveCamera.Spectator)
-        {
+                                                                        
+        if (cameraHandler.GetActiveCamera() == Camerahandler.ActiveCamera.Spectator && gameHandler.GameHasEnded() == false)
+        {   //don't display the custom cursor if the game has ended in spectator mode
             customCursor.gameObject.SetActive(true);
         }
         else
