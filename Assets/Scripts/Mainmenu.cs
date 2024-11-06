@@ -3,17 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
-    void Awake()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    void Start()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
     public void StartRed()
     {
         PlayerPrefs.SetInt("Startingside", 1);
@@ -32,5 +21,17 @@ public class Mainmenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Player quit the game Checkers3D");
+    }
+
+    void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

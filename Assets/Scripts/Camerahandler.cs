@@ -12,7 +12,8 @@ public class Camerahandler : MonoBehaviour
     }
 
     public bool automode = false;
-    public Gamehandler gamehandler;
+    public Gamehandler gameHandler;
+    public Hudmanager hudManager;
     ActiveCamera activecamera;
     [SerializeField] GameObject DefaultCamera;
     [SerializeField] GameObject CameraBlue;
@@ -63,7 +64,7 @@ public class Camerahandler : MonoBehaviour
 
         if (automode == true)
         {
-            if (gamehandler.turn == Gamehandler.Turn.Red)
+            if (gameHandler.turn == Gamehandler.Turn.Red)
             {
                 SwitchToRedCamera();
             }
@@ -95,6 +96,13 @@ public class Camerahandler : MonoBehaviour
 
     void Update()
     {
+        //if player presses ESC, switch to default view in order to let player use mouse pointer
+        if (hudManager.IsExitMenuButtonsOpen() == true)
+        {
+            SwitchToDefaultCamera();
+            automode = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
         {
             SwitchToDefaultCamera();
@@ -113,7 +121,7 @@ public class Camerahandler : MonoBehaviour
             automode = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && gameHandler.GameHasEnded() == false)
         {
             SwitchToSpectatorCamera();
             automode = false;
@@ -125,7 +133,7 @@ public class Camerahandler : MonoBehaviour
             {
                 automode = true;
 
-                if (gamehandler.turn == Gamehandler.Turn.Red)
+                if (gameHandler.turn == Gamehandler.Turn.Red)
                 {
                     SwitchToRedCamera();
                 }

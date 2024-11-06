@@ -29,8 +29,8 @@ public class Detectmouse : MonoBehaviour
 
     void Update()
     {
-        //if the controls menu is open, don't use raycasting to other objects (except sectors)
-        if (hudManager.IsControlsMenuOpen() == false)
+        //if the controls menu or confirm to exit prompt is open, don't use raycasting to other objects (except sectors)
+        if (hudManager.IsControlsMenuOpen() == false && hudManager.IsExitMenuButtonsOpen() == false)
         {
             if (Input.GetMouseButtonDown(0))
             {

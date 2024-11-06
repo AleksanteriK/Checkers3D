@@ -18,6 +18,7 @@ public class Gamehandler : MonoBehaviour
         Red,
         Blue,
     }
+
     public enum Directions
     {
         UpLeft,
@@ -682,14 +683,6 @@ public class Gamehandler : MonoBehaviour
         else if (initialturn == 2)
         {
             turn = Turn.Blue;
-        }
-    }
-    void Update()
-    {
-		//return to menu
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }
