@@ -28,7 +28,7 @@ Aleksanteri Koivisto
 ## Screenshots
 <img src="Screenshots/gamemenu.png" width="720">
 
-<img src="Screenshots/gameview.png" width="720">
+<img src="Screenshots/defaultview.png" width="720">
 
 <img src="Screenshots/freecamera.png" width="720">
 
