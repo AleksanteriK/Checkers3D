@@ -16,7 +16,6 @@ Aleksanteri Koivisto
 
 * [Unity3D](https://unity3d.com/) - Game Engine
 * [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/) - IDE
-* [UnityCloud](https://cloud.unity.com/home/login) - Version Control
 * [Blender](https://www.blender.org/) - 3D modeling
 
 ### Sources
