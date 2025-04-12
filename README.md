@@ -2,7 +2,7 @@
 
 ### 12.4.2025
 
-Checkers3D is now downloadable to play from Itch.io!
+You can now download Checkers3D from Itch.io!
 
 https://aleksanterik.itch.io/checkers-3d
 
