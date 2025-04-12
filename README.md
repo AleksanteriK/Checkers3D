@@ -1,5 +1,9 @@
 # Checkers3D
 
+### 12.4.2025
+
+Added GNU GPL v3.0 license
+
 ## Version 1.5
 
 Simple 3D player versus player checkers game made with Unity
@@ -7,6 +11,8 @@ Simple 3D player versus player checkers game made with Unity
 New in version 1.5:
 
 -Improved HUD and game logic
+
+C# Source files are located in Assets/Scripts
 
 ## Authors
 
