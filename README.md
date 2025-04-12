@@ -2,6 +2,12 @@
 
 ### 12.4.2025
 
+Checkers3D is now downloadable to play from Itch.io!
+
+https://aleksanterik.itch.io/checkers-3d
+
+More:
+
 Added GNU GPL v3.0 license
 
 C# Source files are located in Assets/Scripts
