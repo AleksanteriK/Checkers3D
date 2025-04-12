@@ -34,6 +34,8 @@ Aleksanteri Koivisto
 
 -Menu background is from [Pixabay](https://pixabay.com/)
 
+note: The background image was taken from Pixabay under Pixabay's license. I don't own the rights for the specific image
+
 -Skybox HDR image is from [PolyHaven](https://polyhaven.com/hdris/skies)
 
 ## Screenshots
