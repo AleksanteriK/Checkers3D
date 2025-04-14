@@ -1,16 +1,8 @@
 # Checkers3D
 
-### 12.4.2025
-
 You can now download Checkers3D from Itch.io!
 
 https://aleksanterik.itch.io/checkers-3d
-
-More:
-
-Added GNU GPL v3.0 license
-
-C# Source files are located in Assets/Scripts
 
 ## Version 1.5
 
@@ -34,8 +26,6 @@ Aleksanteri Koivisto
 
 -Menu background is from [Pixabay](https://pixabay.com/)
 
-note: The background image was taken from Pixabay under Pixabay's license. I don't own the rights for the specific image
-
 -Skybox HDR image is from [PolyHaven](https://polyhaven.com/hdris/skies)
 
 ## Screenshots
@@ -45,3 +35,19 @@ note: The background image was taken from Pixabay under Pixabay's license. I don
 
 <img src="Screenshots/freecamera.png" width="720">
 
+## License
+
+-**Code License:**
+
+C# Source files are located in Assets/Scripts
+
+The source code in assets/scripts is licensed under the MIT License
+
+-**Unity Engine:**
+
+This game uses Unity game engine, which is proprietary software. Unity files (engine, library etc)
+are subject to [Unity's terms of service](https://unity.com/legal).
+
+-**Assets:**
+
+Other assets such as art and other third party assets are not licensed under MIT unless explicitly stated
